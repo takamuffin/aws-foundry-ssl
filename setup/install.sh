@@ -15,12 +15,6 @@ sudo dnf install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
 sudo dnf install -y openssl-devel
 sudo dnf install -y amazon-cloudwatch-agent
 
-# Amazon Cloudwatch logs, zone updates and kernel patching
-echo "===== 4. INSTALLING AWS SERVICES AND LINUX KERNEL PATCHING ====="
-source /aws-foundry-ssl/setup/aws_cloudwatch_config.sh
-source /aws-foundry-ssl/setup/aws_hosted_zone_id.sh
-source /aws-foundry-ssl/setup/aws_linux_updates.sh
-
 # Install foundry
 echo "===== 2. INSTALLING FOUNDRY ====="
 source /aws-foundry-ssl/setup/foundry.sh
@@ -29,7 +23,11 @@ source /aws-foundry-ssl/setup/foundry.sh
 echo "===== 3. INSTALLING NGINX ====="
 source /aws-foundry-ssl/setup/nginx.sh
 
-
+# Amazon Cloudwatch logs, zone updates and kernel patching
+echo "===== 4. INSTALLING AWS SERVICES AND LINUX KERNEL PATCHING ====="
+source /aws-foundry-ssl/setup/aws_cloudwatch_config.sh
+source /aws-foundry-ssl/setup/aws_hosted_zone_id.sh
+source /aws-foundry-ssl/setup/aws_linux_updates.sh
 
 # Set up SSL certificates with LetsEncrypt
 echo "===== 5. INSTALLING LETSENCRYPT CERTBOT ====="
