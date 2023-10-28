@@ -9,7 +9,7 @@ sudo mkdir -p /foundrycron /var/log/foundrycron /home/foundry/foundry-install /f
 # Download Foundry from Patreon link or Google Drive
 cd /home/foundry/foundry-install
 
-rough_filesize=100000000
+rough_filesize=100000
 
 if [[ `echo ${foundry_download_link} | cut -d '/' -f3` == 'drive.google.com' ]]; then
     # Google Drive link
