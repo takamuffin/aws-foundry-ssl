@@ -1,10 +1,12 @@
 #!/bin/bash
 
 # These files are created in the CloudFormation script
+echo "===== 0. SOURCING VARIABLES ====="
 source /foundryssl/variables.sh
 source /foundryssl/variables_tmp.sh
 
 # Set up logging to the logfile
+echo "===== 0. Set up logging to the logfile ====="
 exec >> /tmp/foundry-setup.log 2>&1
 set -x
 
