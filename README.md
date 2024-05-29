@@ -4,13 +4,12 @@ This is a fork of the [**Foundry CF deploy script**](https://github.com/cat-box/
 
 **New Things**
 
-- Supports Foundry 11
+- Supports Foundry 11+
 - Amazon Linux 2023 on EC2
 - Node 20.x
-- Newer more cost efficient / performant instance type support, including ARM64
-- Experimental IPv6 support
+- IPv6 support (with default VPC)
 
-Note this is just something being done in my spare time and for fun/interest. Please keep that in mind.
+Note this is just something being done in my spare time and for fun/interest. If you have any contributions, they're welcome. Please note that I'm only focusing on AWS as the supported hosting service.
 
 ## Installation
 
@@ -46,7 +45,7 @@ This only needs to be done _once_, no matter how many times you redeploy.
 - Go to **CloudFormation** and choose to **Create a Stack** with new resources
   - Leave `Template is Ready` selected
   - Choose `Upload a template file`
-  - Upload the `/cloudformation/Foundry_Deployment.template` file from this project
+  - Upload the `/cloudformation/Foundry_Deployment.yaml` file from this project
   - Fill in and check _all_ the details. I've tried to provide sensible defaults. At a minimum if you leave the defaults, the ones that need to be filled in are:
     - Add the link for downloading Foundry
     - Set an admin user password (for IAM)
@@ -59,11 +58,11 @@ This only needs to be done _once_, no matter how many times you redeploy.
 
 It should be pretty automated from there. Again, just be careful of the LetsEncrypt TLS issuance limits.
 
-If need be, set the LetsEncrypt TLS testing option to `False` in the CloudFormation setup if you are debugging a failed stack deploy. Should you run out of LetsEncrypt TLS requests, you'll need to wait one week before trying again.
+If need be, set the LetsEncrypt TLS testing option to `False` in the CloudFormation setup while you're debugging a failed stack deploy. Should you run out of LetsEncrypt TLS requests, you'll need to wait one week before trying again.
 
 ## Security and Updates
 
-As of the `v1.1.0` release, Linux auto-patching is enabled by default. A utility script `utils/kernel_updates.sh` also exists to help you manage this if you want to disable or re-enable or run it.
+Linux auto-patching is enabled by default. A utility script `utils/kernel_updates.sh` also exists to help you manage this if you want to disable, re-enable, or run it manually.
 
 It's also recommended to SSH into the instance and run `sudo dnf upgrade` every so often to make sure your packages are up to date with the latest fixes and security releases.
 
