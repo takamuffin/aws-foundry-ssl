@@ -109,13 +109,3 @@ As long as you can get as far as the EC2 being spun up, then:
   - `sudo cat /tmp/foundry-setup.log | less` if setup scripts have finished running
 
 Hopefully that gives you some insight in what's going on...
-
-### Future Considerations
-
-- Improve CloudWatch logs (?)
-- Add script to facilitate transfer between two EC2s?
-- Store LetsEncrypt PEM keys in AWS Secrets Manager and retrieve them instead of requesting new ones to work around the issuance limit (is that even possible / supported?)
-- Better ownership/permissions defaults?
-- Automatically select the `x86_64` or `arm64` image based on instance choice (even possible?)
-- Consider using SSH forwarding via SSM or EC2 Instance Connect instead of key pair stuff, would need to look into this
-- IPv6 support (AWS will soon start charging for IPv4 address assignments), in progress
