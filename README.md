@@ -67,7 +67,7 @@ If you want to allow yourself access via SSH, you must specify a valid [subnet r
 - For IPv6 access, use `[your IPv6 address]/128` unless you know what you're doing
   - As IPv6 device addresses change quite frequently, it's likely this will need to be updated often until you know what a more permissive subnet range looks like for you; A more permissive IPv6 range might be `0123:4567:89ab::/64` for example
 
-You can always manually add or update SSH access later in `EC2 Security Groups` in the AWS Console.
+You can always manually add or update SSH access later in `EC2 / Security Groups` in the AWS Console.
 
 ## Running the Server on a Schedule
 
@@ -80,7 +80,8 @@ If you don't have a need for your Foundry server to run 24/7, **AWS Systems Mana
 
 3. Choose `Resource Scheduler`
 
-   - Enter a tag name of `Name` with a value of `FoundryServer`
+   - Enter a tag name of `Name` with a value of `[your Foundry CloudFormation stack name]-Server`
+     - Look for the server name in `EC2` Instances if you're unsure
    - Choose which days and what times you want the server to be active
    - Choose `Current Account` and `Current Region` as targets unless your needs differ
 
@@ -116,7 +117,6 @@ As long as you can get as far as the EC2 being spun up, then:
   - `sudo cat /tmp/foundry-setup.log | less` if setup scripts have finished running
 
 Hopefully that gives you some insight in what's going on...
-
 
 ### LetsEncrypt TLS Issuance Limits
 
