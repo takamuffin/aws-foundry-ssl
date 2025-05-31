@@ -1,6 +1,6 @@
 template-file-path: cloudformation/Foundry_Deployment.yaml
 parameters: 
-  FoundryDownloadLink: https://r2.foundryvtt.com/releases/13.344/FoundryVTT-Linux-13.344.zip?verify=1748733779-ZE1TkVSotUT6LzSACEby%2FoB4pDVOFQ%2Fa4UpJOOya3sM%3D
+  FoundryDownloadLink: https://drive.google.com/file/d/1jgjpbymPnqMj134FIO9ar9MP0txUq2SZ/view?usp=drive_link
   AdminUserName: Takamuffin
   AdminUserPW: InitialPW!1
   FullyQualifiedDomainName: sansonetech.com
