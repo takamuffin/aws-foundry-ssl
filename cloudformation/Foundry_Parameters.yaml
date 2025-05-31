@@ -1,3 +1,12 @@
 template-file-path: cloudformation/Foundry_Deployment.yaml
-parameters: {}
+parameters: 
+  FoundryDownloadLink: https://r2.foundryvtt.com/releases/13.344/FoundryVTT-Linux-13.344.zip?verify=1748733779-ZE1TkVSotUT6LzSACEby%2FoB4pDVOFQ%2Fa4UpJOOya3sM%3D
+  AdminUserName: Takamuffin
+  AdminUserPW: initialpw
+  FullyQualifiedDomainName: sansonetech.com
+  Email: alex@sansonetech.com
+  InstanceKey: foundry
+  InstanceType: t4g.large
+  S3BucketName: foundry-sansonetech
+  TakeSnapshots: "True"
 tags: {}
